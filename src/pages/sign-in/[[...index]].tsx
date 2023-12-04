@@ -1,10 +1,12 @@
 import { SignIn } from "@clerk/nextjs";
 
-
 const SignInPage = () => {
-    return<>
-    <SignIn path="/sign-in" routing="path" />
-    </>
+    return<div>
+    <SignIn path="/sign-in"
+     routing="path" 
+    signUpUrl={'/sign-up'}
+     redirectUrl={'/'} />
+    </div>
 }
 
 export default SignInPage
