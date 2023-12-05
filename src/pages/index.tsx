@@ -7,6 +7,10 @@ import { useUser } from '@clerk/nextjs'
 // COMPONENTS
 import Navbar from '@/components/layout/Navbar'
 
+
+//STYLES
+import UtilityStyles from '@/styles/Utility.module.scss'
+
 export default function Home() {
   return (
     <>
@@ -16,9 +20,10 @@ export default function Home() {
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <main>
-
-         <Navbar/>
+      <Navbar/>
+      <main className={UtilityStyles.container}>
+        <h1>Recent Blogs</h1>
+      
 
 
       </main>
