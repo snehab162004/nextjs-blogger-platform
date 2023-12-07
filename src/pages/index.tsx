@@ -6,7 +6,7 @@ import { useUser } from '@clerk/nextjs'
 
 // COMPONENTS
 import Navbar from '@/components/layout/Navbar'
-
+import Card from '@/components/blog/Card'
 
 //STYLES
 import UtilityStyles from '@/styles/Utility.module.scss'
@@ -23,7 +23,9 @@ export default function Home() {
       <Navbar/>
       <main className={UtilityStyles.container}>
         <h1>Recent Blogs</h1>
-      
+        <div>
+          <Card/>
+        </div>
 
 
       </main>
