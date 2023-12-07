@@ -1,6 +1,6 @@
 // styles
 import styles from '@/styles/Blogcard.module.scss'
-
+import UtilityStyles from '@/styles/Utility.module.scss'
 
 const BlogCard = () => {
     return<>
@@ -17,7 +17,9 @@ const BlogCard = () => {
     </div>
     <div className={styles.blogcard_footer_container}>
         <small>07 Dec 2023</small>
-        <button>Read More</button>
+        <button
+        className={UtilityStyles.primary_btn}>
+            Read More</button>
     </div>
     </div>
     </>

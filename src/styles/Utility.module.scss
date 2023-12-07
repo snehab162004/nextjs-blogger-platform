@@ -1,8 +1,26 @@
 .container {
         width: 100%;
-        display: flex;
         padding: 1rem;
         margin: 0 auto;
+}
+
+.header{
+    margin-bottom: 1rem;
+}
+
+.primary_btn {
+    padding: 0.8rem 1.2rem;
+    border-radius: 0.7rem;
+    font-size: 0.9rem;
+    font-weight: bold;
+    border: none;
+    background-color: #7b2cbf;
+    color: #fff;
+    transition: all .3s linear;
+    &:hover {
+        transform: translateY(-0.5rem);
+        box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+    }
 }
 
 @media (min-width: 768px) {

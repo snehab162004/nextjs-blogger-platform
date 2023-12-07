@@ -1,7 +1,6 @@
 import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
-import styles from '@/styles/Home.module.css'
 import { useUser } from '@clerk/nextjs'
 
 // COMPONENTS
@@ -10,7 +9,7 @@ import Card from '@/components/blog/Card'
 
 //STYLES
 import UtilityStyles from '@/styles/Utility.module.scss'
-
+import styles from '@/styles/Home.module.scss'
 export default function Home() {
   return (
     <>
@@ -22,9 +21,12 @@ export default function Home() {
       </Head>
       <Navbar/>
       <main className={UtilityStyles.container}>
-        <h1>Recent Blogs</h1>
-        <div>
+        <h1 className={UtilityStyles.header}>Recent Blogs</h1>
+        <div className={styles.blogcards_deck}>
           <Card/>
+          <Card/>
+          <Card/>
+
         </div>
 
 
