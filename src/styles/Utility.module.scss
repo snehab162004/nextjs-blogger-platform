@@ -17,9 +17,18 @@
     background-color: #7b2cbf;
     color: #fff;
     transition: all .3s linear;
+    cursor: pointer;
     &:hover {
         transform: translateY(-0.5rem);
         box-shadow: 0 0 0.5rem rgba(0, 0, 0, 0.2);
+    }
+    &:focus {
+        outline: none;
+        background-color: #2f0355;
+    }
+    &:active {
+        background-color: transparent;
+        border: 1px solid whitesmoke;
     }
 }
 
