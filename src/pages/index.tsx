@@ -2,6 +2,7 @@ import Head from 'next/head'
 import Image from 'next/image'
 import { Inter } from 'next/font/google'
 import { useUser } from '@clerk/nextjs'
+import { useQuery } from '@tanstack/react-query'
 
 // COMPONENTS
 import Navbar from '@/components/layout/Navbar'
@@ -19,31 +20,16 @@ import { axiosInstance as axios } from '@/config/axios'
 import type {Blog} from '@/types.d'
 import BlogCard from '@/components/blog/Card'
 
+// HOOKS
+import  {useGetBlogsByUserId} from '@/hooks/useGetBlogsByUserId'
 
 
 export default function Home() {
-    const [blogs, setBlogs] = useState<Blog[]>([])
-    const [isFetchingBlogs, setisFetchingBlogs] = useState(false)
-    const [isError, setError] = useState('')
-
-    useEffect(() => {
-      setisFetchingBlogs(true)
-      console.log('master key: ', `${process.env.NEXT_PUBLIC_JSONBIN_MASTER_KEY}`)
-      console.log('access key: ', `${process.env.NEXT_PUBLIC_JSONBIN_ACCESS_KEY}`)
-      axios({
-        method: 'GET',
-        url: `/b/${process.env.NEXT_PUBLIC_JSONBIN_BIN_ID}`
-      })
-      .then((res) => {
-        setBlogs(res.data?.record?.Blogs)
-    })
-    .catch((error) => {
-      alert(error?.message || 'Something went wrong ')
-    }) 
-    .finally(() => {
-      setisFetchingBlogs(false)
-    })
-  }, [])
+   const {data: blogs, isFetching: isFetchingBlogs, isError } =  useGetBlogsByUserId( {
+    variables :{
+      userId: '123'
+    }
+   })
 
 
   return (

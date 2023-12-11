@@ -25,6 +25,7 @@ const BlogCard = (props: Blog) => {
         <button
         className={UtilityStyles.primary_btn}>
             Read More</button>
+        
     </div>
     </div>
     </>
